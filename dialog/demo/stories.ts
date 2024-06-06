@@ -4,18 +4,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import '@material/web/button/filled-button.js';
-import '@material/web/button/filled-tonal-button.js';
-import '@material/web/button/text-button.js';
-import '@material/web/dialog/dialog.js';
-import '@material/web/icon/icon.js';
-import '@material/web/iconbutton/icon-button.js';
-import '@material/web/radio/radio.js';
-import '@material/web/textfield/filled-text-field.js';
+import "@material/web/button/filled-button.js";
+import "@material/web/button/filled-tonal-button.js";
+import "@material/web/button/text-button.js";
+import "@material/web/dialog/dialog.js";
+import "@material/web/icon/icon.js";
+import "@material/web/iconbutton/icon-button.js";
+import "@material/web/radio/radio.js";
+import "@material/web/textfield/filled-text-field.js";
 
-import {MdDialog} from '@material/web/dialog/dialog.js';
-import {MaterialStoryInit} from './material-collection.js';
-import {css, html, nothing} from 'lit';
+import { MdDialog } from "@material/web/dialog/dialog.js";
+import { MaterialStoryInit } from "./material-collection.js";
+import { css, html, nothing } from "lit";
 
 /** Knob types for dialog stories. */
 export interface StoryKnobs {
@@ -31,25 +31,26 @@ function showDialog(event: Event) {
 }
 
 const standard: MaterialStoryInit<StoryKnobs> = {
-  name: 'Dialog',
-  render({icon, headline, supportingText, quick, noFocusTrap}) {
+  name: "Dialog",
+  render({ icon, headline, supportingText, quick, noFocusTrap }) {
     return html`
-      <md-filled-button @click=${showDialog} aria-label="Open a dialog">
+      <di-filled-button @click=${showDialog} aria-label="Open a dialog">
         Open
-      </md-filled-button>
+      </di-filled-button>
 
       <md-dialog
-        aria-label=${headline ? nothing : 'A simple dialog'}
+        aria-label=${headline ? nothing : "A simple dialog"}
         ?quick=${quick}
-        ?no-focus-trap=${noFocusTrap}>
+        ?no-focus-trap=${noFocusTrap}
+      >
         ${icon ? html`<md-icon slot="icon">${icon}</md-icon>` : nothing}
         <div slot="headline">${headline}</div>
         <form id="form" slot="content" method="dialog">
           <span>${supportingText}</span>
         </form>
         <div slot="actions">
-          <md-text-button form="form" value="close">Close</md-text-button>
-          <md-text-button form="form" value="ok" autofocus>OK</md-text-button>
+          <di-text-button form="form" value="close">Close</di-text-button>
+          <di-text-button form="form" value="ok" autofocus>OK</di-text-button>
         </div>
       </md-dialog>
     `;
@@ -57,12 +58,12 @@ const standard: MaterialStoryInit<StoryKnobs> = {
 };
 
 const alert: MaterialStoryInit<StoryKnobs> = {
-  name: 'Alert',
-  render({quick, noFocusTrap}) {
+  name: "Alert",
+  render({ quick, noFocusTrap }) {
     return html`
-      <md-filled-button @click=${showDialog} aria-label="Open an alert dialog">
+      <di-filled-button @click=${showDialog} aria-label="Open an alert dialog">
         Alert
-      </md-filled-button>
+      </di-filled-button>
 
       <md-dialog type="alert" ?quick=${quick} ?no-focus-trap=${noFocusTrap}>
         <div slot="headline">Alert dialog</div>
@@ -71,7 +72,7 @@ const alert: MaterialStoryInit<StoryKnobs> = {
           urgent information, details, or actions.
         </form>
         <div slot="actions">
-          <md-text-button form="form" value="ok">OK</md-text-button>
+          <di-text-button form="form" value="ok">OK</di-text-button>
         </div>
       </md-dialog>
     `;
@@ -79,19 +80,21 @@ const alert: MaterialStoryInit<StoryKnobs> = {
 };
 
 const confirm: MaterialStoryInit<StoryKnobs> = {
-  name: 'Confirm',
-  render({quick, noFocusTrap}) {
+  name: "Confirm",
+  render({ quick, noFocusTrap }) {
     return html`
-      <md-filled-button
+      <di-filled-button
         @click=${showDialog}
-        aria-label="Open a confirmation dialog">
+        aria-label="Open a confirmation dialog"
+      >
         Confirm
-      </md-filled-button>
+      </di-filled-button>
 
       <md-dialog
         style="max-width: 320px;"
         ?quick=${quick}
-        ?no-focus-trap=${noFocusTrap}>
+        ?no-focus-trap=${noFocusTrap}
+      >
         <div slot="headline">Permanently delete?</div>
         <md-icon slot="icon">delete_outline</md-icon>
         <form id="form" slot="content" method="dialog">
@@ -99,9 +102,9 @@ const confirm: MaterialStoryInit<StoryKnobs> = {
           devices.
         </form>
         <div slot="actions">
-          <md-text-button form="form" value="delete">Delete</md-text-button>
-          <md-filled-tonal-button form="form" value="cancel" autofocus
-            >Cancel</md-filled-tonal-button
+          <di-text-button form="form" value="delete">Delete</di-text-button>
+          <di-filled-tonal-button form="form" value="cancel" autofocus
+            >Cancel</di-filled-tonal-button
           >
         </div>
       </md-dialog>
@@ -110,18 +113,18 @@ const confirm: MaterialStoryInit<StoryKnobs> = {
 };
 
 const choose: MaterialStoryInit<StoryKnobs> = {
-  name: 'Choose',
+  name: "Choose",
   styles: css`
     label {
       display: flex;
       align-items: center;
     }
   `,
-  render({quick, noFocusTrap}) {
+  render({ quick, noFocusTrap }) {
     return html`
-      <md-filled-button @click=${showDialog} aria-label="Open a choice dialog">
+      <di-filled-button @click=${showDialog} aria-label="Open a choice dialog">
         Choice
-      </md-filled-button>
+      </di-filled-button>
 
       <md-dialog ?quick=${quick} ?no-focus-trap=${noFocusTrap}>
         <div slot="headline">Choose your favorite pet</div>
@@ -132,7 +135,8 @@ const choose: MaterialStoryInit<StoryKnobs> = {
               value="cats"
               aria-label="Cats"
               touch-target="wrapper"
-              checked></md-radio>
+              checked
+            ></md-radio>
             <span aria-hidden="true">Cats</span>
           </label>
           <label>
@@ -140,7 +144,8 @@ const choose: MaterialStoryInit<StoryKnobs> = {
               name="pet"
               value="dogs"
               aria-label="Dogs"
-              touch-target="wrapper"></md-radio>
+              touch-target="wrapper"
+            ></md-radio>
             <span aria-hidden="true">Dogs</span>
           </label>
           <label>
@@ -148,13 +153,14 @@ const choose: MaterialStoryInit<StoryKnobs> = {
               name="pet"
               value="birds"
               aria-label="Birds"
-              touch-target="wrapper"></md-radio>
+              touch-target="wrapper"
+            ></md-radio>
             <span aria-hidden="true">Birds</span>
           </label>
         </form>
         <div slot="actions">
-          <md-text-button form="form" value="cancel">Cancel</md-text-button>
-          <md-text-button form="form" autofocus value="ok">OK</md-text-button>
+          <di-text-button form="form" value="cancel">Cancel</di-text-button>
+          <di-text-button form="form" autofocus value="ok">OK</di-text-button>
         </div>
       </md-dialog>
     `;
@@ -162,13 +168,13 @@ const choose: MaterialStoryInit<StoryKnobs> = {
 };
 
 const contacts: MaterialStoryInit<StoryKnobs> = {
-  name: 'Form',
+  name: "Form",
   styles: css`
     .contacts {
       min-width: calc(100vw - 212px);
     }
 
-    .contacts [slot='header'] {
+    .contacts [slot="header"] {
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
@@ -192,11 +198,11 @@ const contacts: MaterialStoryInit<StoryKnobs> = {
       flex: 1;
     }
   `,
-  render({quick, noFocusTrap}) {
+  render({ quick, noFocusTrap }) {
     return html`
-      <md-filled-button @click=${showDialog} aria-label="Open a form dialog">
+      <di-filled-button @click=${showDialog} aria-label="Open a form dialog">
         Form
-      </md-filled-button>
+      </di-filled-button>
 
       <md-dialog class="contacts" ?quick=${quick} ?no-focus-trap=${noFocusTrap}>
         <span slot="headline">
@@ -209,7 +215,8 @@ const contacts: MaterialStoryInit<StoryKnobs> = {
           <div class="contact-row">
             <md-filled-text-field
               autofocus
-              label="First Name"></md-filled-text-field>
+              label="First Name"
+            ></md-filled-text-field>
             <md-filled-text-field label="Last Name"></md-filled-text-field>
           </div>
           <div class="contact-row">
@@ -220,12 +227,12 @@ const contacts: MaterialStoryInit<StoryKnobs> = {
           <md-filled-text-field label="Phone"></md-filled-text-field>
         </form>
         <div slot="actions">
-          <md-text-button form="form" value="reset" type="reset"
-            >Reset</md-text-button
+          <di-text-button form="form" value="reset" type="reset"
+            >Reset</di-text-button
           >
           <div style="flex: 1"></div>
-          <md-text-button form="form" value="cancel">Cancel</md-text-button>
-          <md-text-button form="form" value="save">Save</md-text-button>
+          <di-text-button form="form" value="cancel">Cancel</di-text-button>
+          <di-text-button form="form" value="save">Save</di-text-button>
         </div>
       </md-dialog>
     `;
@@ -233,12 +240,12 @@ const contacts: MaterialStoryInit<StoryKnobs> = {
 };
 
 const floatingSheet: MaterialStoryInit<StoryKnobs> = {
-  name: 'Floating sheet',
-  render({quick, noFocusTrap}) {
+  name: "Floating sheet",
+  render({ quick, noFocusTrap }) {
     return html`
-      <md-filled-button @click=${showDialog} aria-label="Open a floating sheet">
+      <di-filled-button @click=${showDialog} aria-label="Open a floating sheet">
         Floating sheet
-      </md-filled-button>
+      </di-filled-button>
 
       <md-dialog ?quick=${quick} ?no-focus-trap=${noFocusTrap}>
         <span slot="headline">

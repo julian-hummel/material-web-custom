@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {CSSResultOrNative} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import { CSSResultOrNative } from "lit";
+import { customElement } from "lit/decorators.js";
 
-import {OutlinedButton} from './internal/outlined-button.js';
-import {styles as outlinedStyles} from './internal/outlined-styles.js';
-import {styles as sharedStyles} from './internal/shared-styles.js';
+import { OutlinedButton } from "./internal/outlined-button.js";
+import { styles as outlinedStyles } from "./internal/outlined-styles.js";
+import { styles as sharedStyles } from "./internal/shared-styles.js";
 
 declare global {
   interface HTMLElementTagNameMap {
-    'md-outlined-button': MdOutlinedButton;
+    "di-outlined-button": MdOutlinedButton;
   }
 }
 
@@ -39,7 +39,7 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement('md-outlined-button')
+@customElement("di-outlined-button")
 export class MdOutlinedButton extends OutlinedButton {
   static override styles: CSSResultOrNative[] = [sharedStyles, outlinedStyles];
 }

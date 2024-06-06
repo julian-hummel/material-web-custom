@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {CSSResultOrNative} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import { CSSResultOrNative } from "lit";
+import { customElement } from "lit/decorators.js";
 
-import {styles as sharedStyles} from './internal/shared-styles.js';
-import {TextButton} from './internal/text-button.js';
-import {styles as textStyles} from './internal/text-styles.js';
+import { styles as sharedStyles } from "./internal/shared-styles.js";
+import { TextButton } from "./internal/text-button.js";
+import { styles as textStyles } from "./internal/text-styles.js";
 
 declare global {
   interface HTMLElementTagNameMap {
-    'md-text-button': MdTextButton;
+    "di-text-button": MdTextButton;
   }
 }
 
@@ -37,7 +37,7 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement('md-text-button')
+@customElement("di-text-button")
 export class MdTextButton extends TextButton {
   static override styles: CSSResultOrNative[] = [sharedStyles, textStyles];
 }

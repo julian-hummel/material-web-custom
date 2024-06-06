@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import '@material/web/button/elevated-button.js';
-import '@material/web/button/filled-button.js';
-import '@material/web/button/filled-tonal-button.js';
-import '@material/web/button/outlined-button.js';
-import '@material/web/button/text-button.js';
-import '@material/web/icon/icon.js';
+import "@material/web/button/elevated-button.js";
+import "@material/web/button/filled-button.js";
+import "@material/web/button/filled-tonal-button.js";
+import "@material/web/button/outlined-button.js";
+import "@material/web/button/text-button.js";
+import "@material/web/icon/icon.js";
 
-import {MaterialStoryInit} from './material-collection.js';
-import {css, html} from 'lit';
+import { MaterialStoryInit } from "./material-collection.js";
+import { css, html } from "lit";
 
 /** Knob types for button stories. */
 export interface StoryKnobs {
@@ -36,67 +36,72 @@ const styles = css`
 `;
 
 const buttons: MaterialStoryInit<StoryKnobs> = {
-  name: 'Button variants',
+  name: "Button variants",
   styles,
-  render({label, disabled}) {
+  render({ label, disabled }) {
     return html`
       <div class="column">
         <div class="row">
-          <md-filled-button ?disabled=${disabled}>
-            ${label || 'Filled'}
-          </md-filled-button>
+          <di-filled-button ?disabled=${disabled}>
+            ${label || "Filled"}
+          </di-filled-button>
 
-          <md-outlined-button ?disabled=${disabled}>
-            ${label || 'Outlined'}
-          </md-outlined-button>
+          <di-outlined-button ?disabled=${disabled}>
+            ${label || "Outlined"}
+          </di-outlined-button>
 
-          <md-elevated-button ?disabled=${disabled}>
-            ${label || 'Elevated'}
-          </md-elevated-button>
+          <di-elevated-button ?disabled=${disabled}>
+            ${label || "Elevated"}
+          </di-elevated-button>
 
-          <md-filled-tonal-button ?disabled=${disabled}>
-            ${label || 'Tonal'}
-          </md-filled-tonal-button>
+          <di-filled-tonal-button ?disabled=${disabled}>
+            ${label || "Tonal"}
+          </di-filled-tonal-button>
 
-          <md-text-button ?disabled=${disabled}>
-            ${label || 'Text'}
-          </md-text-button>
+          <di-text-button ?disabled=${disabled}>
+            ${label || "Text"}
+          </di-text-button>
         </div>
         <div class="row">
-          <md-filled-button
+          <di-filled-button
             ?disabled=${disabled}
-            aria-label="${label || 'Filled'} button with icon">
+            aria-label="${label || "Filled"} button with icon"
+          >
             <md-icon slot="icon">upload</md-icon>
-            ${label || 'Filled'}
-          </md-filled-button>
+            ${label || "Filled"}
+          </di-filled-button>
 
-          <md-outlined-button
+          <di-outlined-button
             ?disabled=${disabled}
-            aria-label="${label || 'Outlined'} button with icon">
+            aria-label="${label || "Outlined"} button with icon"
+          >
             <md-icon slot="icon">upload</md-icon>
-            ${label || 'Outlined'}
-          </md-outlined-button>
+            ${label || "Outlined"}
+          </di-outlined-button>
 
-          <md-elevated-button
+          <di-elevated-button
             ?disabled=${disabled}
-            aria-label="${label || 'Elevated'} button with icon">
+            aria-label="${label || "Elevated"} button with icon"
+          >
             <md-icon slot="icon">upload</md-icon>
-            ${label || 'Elevated'}
-          </md-elevated-button>
+            ${label || "Elevated"}
+          </di-elevated-button>
 
-          <md-filled-tonal-button
+          <di-filled-tonal-button
             ?disabled=${disabled}
-            aria-label="${label || 'Tonal'} button with icon">
+            aria-label="${label || "Tonal"} button with icon"
+          >
             <md-icon slot="icon">upload</md-icon>
-            ${label || 'Tonal'}
-          </md-filled-tonal-button>
+            ${label || "Tonal"}
+          </di-filled-tonal-button>
 
-          <md-text-button
+          <di-text-button
             ?disabled=${disabled}
-            aria-label="${label || 'Text'} button with icon">
+            aria-label="${label || "Text"} button with icon"
+          >
             <md-icon slot="icon">upload</md-icon>
-            ${label || 'Text'}
-          </md-text-button>
+            ${label || "Text"}
+          </di-text-button>
         </div>
       </div>
     `;
@@ -104,92 +109,102 @@ const buttons: MaterialStoryInit<StoryKnobs> = {
 };
 
 const links: MaterialStoryInit<StoryKnobs> = {
-  name: 'Links',
+  name: "Links",
   styles,
-  render({label}) {
+  render({ label }) {
     return html`
       <div class="column">
         <div class="row">
-          <md-filled-button
+          <di-filled-button
             href="https://google.com"
             target="_blank"
-            trailing-icon>
-            ${label || 'Filled'}
-          </md-filled-button>
+            trailing-icon
+          >
+            ${label || "Filled"}
+          </di-filled-button>
 
-          <md-outlined-button
+          <di-outlined-button
             href="https://google.com"
             target="_blank"
-            trailing-icon>
-            ${label || 'Outlined'}
-          </md-outlined-button>
+            trailing-icon
+          >
+            ${label || "Outlined"}
+          </di-outlined-button>
 
-          <md-elevated-button
+          <di-elevated-button
             href="https://google.com"
             target="_blank"
-            trailing-icon>
-            ${label || 'Elevated'}
-          </md-elevated-button>
+            trailing-icon
+          >
+            ${label || "Elevated"}
+          </di-elevated-button>
 
-          <md-filled-tonal-button
+          <di-filled-tonal-button
             href="https://google.com"
             target="_blank"
-            trailing-icon>
-            ${label || 'Tonal'}
-          </md-filled-tonal-button>
+            trailing-icon
+          >
+            ${label || "Tonal"}
+          </di-filled-tonal-button>
 
-          <md-text-button
+          <di-text-button
             href="https://google.com"
             target="_blank"
-            trailing-icon>
-            ${label || 'Text'}
-          </md-text-button>
+            trailing-icon
+          >
+            ${label || "Text"}
+          </di-text-button>
         </div>
         <div class="row">
-          <md-filled-button
-            aria-label="${label || 'Filled'} link with trailing icon"
+          <di-filled-button
+            aria-label="${label || "Filled"} link with trailing icon"
             href="https://google.com"
             target="_blank"
-            trailing-icon>
+            trailing-icon
+          >
             <md-icon slot="icon">open_in_new</md-icon>
-            ${label || 'Filled'}
-          </md-filled-button>
+            ${label || "Filled"}
+          </di-filled-button>
 
-          <md-outlined-button
-            aria-label="${label || 'Outlined'} link with trailing icon"
+          <di-outlined-button
+            aria-label="${label || "Outlined"} link with trailing icon"
             href="https://google.com"
             target="_blank"
-            trailing-icon>
+            trailing-icon
+          >
             <md-icon slot="icon">open_in_new</md-icon>
-            ${label || 'Outlined'}
-          </md-outlined-button>
+            ${label || "Outlined"}
+          </di-outlined-button>
 
-          <md-elevated-button
-            aria-label="${label || 'Elevated'} link with trailing icon"
+          <di-elevated-button
+            aria-label="${label || "Elevated"} link with trailing icon"
             href="https://google.com"
             target="_blank"
-            trailing-icon>
+            trailing-icon
+          >
             <md-icon slot="icon">open_in_new</md-icon>
-            ${label || 'Elevated'}
-          </md-elevated-button>
+            ${label || "Elevated"}
+          </di-elevated-button>
 
-          <md-filled-tonal-button
-            aria-label="${label || 'Tonal'} link with trailing icon"
+          <di-filled-tonal-button
+            aria-label="${label || "Tonal"} link with trailing icon"
             href="https://google.com"
             target="_blank"
-            trailing-icon>
+            trailing-icon
+          >
             <md-icon slot="icon">open_in_new</md-icon>
-            ${label || 'Tonal'}
-          </md-filled-tonal-button>
+            ${label || "Tonal"}
+          </di-filled-tonal-button>
 
-          <md-text-button
-            aria-label="${label || 'Text'} link with trailing icon"
+          <di-text-button
+            aria-label="${label || "Text"} link with trailing icon"
             href="https://google.com"
             target="_blank"
-            trailing-icon>
+            trailing-icon
+          >
             <md-icon slot="icon">open_in_new</md-icon>
-            ${label || 'Text'}
-          </md-text-button>
+            ${label || "Text"}
+          </di-text-button>
         </div>
       </div>
     `;

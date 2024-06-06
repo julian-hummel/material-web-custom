@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import '@material/web/button/outlined-button.js';
-import '@material/web/button/text-button.js';
-import '@material/web/icon/icon.js';
-import '@material/web/iconbutton/icon-button.js';
-import '@material/web/textfield/filled-text-field.js';
-import '@material/web/textfield/outlined-text-field.js';
+import "@material/web/button/outlined-button.js";
+import "@material/web/button/text-button.js";
+import "@material/web/icon/icon.js";
+import "@material/web/iconbutton/icon-button.js";
+import "@material/web/textfield/filled-text-field.js";
+import "@material/web/textfield/outlined-text-field.js";
 
-import {MaterialStoryInit} from './material-collection.js';
-import {MdFilledTextField} from '@material/web/textfield/filled-text-field.js';
-import {css, html, nothing} from 'lit';
+import { MaterialStoryInit } from "./material-collection.js";
+import { MdFilledTextField } from "@material/web/textfield/filled-text-field.js";
+import { css, html, nothing } from "lit";
 
 /** Knob types for Textfield stories. */
 export interface StoryKnobs {
@@ -39,17 +39,17 @@ const styles = css`
     width: 200px;
   }
 
-  [type='textarea'] {
+  [type="textarea"] {
     min-height: 56px;
   }
 
-  [type='textarea'][supporting-text] {
+  [type="textarea"][supporting-text] {
     min-height: 76px;
   }
 `;
 
 const textfields: MaterialStoryInit<StoryKnobs> = {
-  name: 'Text fields',
+  name: "Text fields",
   styles,
   render(knobs) {
     return html`
@@ -60,8 +60,8 @@ const textfields: MaterialStoryInit<StoryKnobs> = {
           placeholder=${knobs.placeholder || nothing}
           prefix-text=${knobs.prefixText || nothing}
           suffix-text=${knobs.suffixText || nothing}
-          supporting-text=${knobs.supportingText ||
-          nothing}></md-filled-text-field>
+          supporting-text=${knobs.supportingText || nothing}
+        ></md-filled-text-field>
 
         <md-outlined-text-field
           ?disabled=${knobs.disabled}
@@ -69,15 +69,15 @@ const textfields: MaterialStoryInit<StoryKnobs> = {
           placeholder=${knobs.placeholder || nothing}
           prefix-text=${knobs.prefixText || nothing}
           suffix-text=${knobs.suffixText || nothing}
-          supporting-text=${knobs.supportingText ||
-          nothing}></md-outlined-text-field>
+          supporting-text=${knobs.supportingText || nothing}
+        ></md-outlined-text-field>
       </div>
     `;
   },
 };
 
 const textareas: MaterialStoryInit<StoryKnobs> = {
-  name: 'Text areas',
+  name: "Text areas",
   styles,
   render(knobs) {
     return html`
@@ -87,23 +87,23 @@ const textareas: MaterialStoryInit<StoryKnobs> = {
           ?disabled=${knobs.disabled}
           label=${knobs.label || nothing}
           placeholder=${knobs.placeholder || nothing}
-          supporting-text=${knobs.supportingText ||
-          nothing}></md-filled-text-field>
+          supporting-text=${knobs.supportingText || nothing}
+        ></md-filled-text-field>
 
         <md-outlined-text-field
           type="textarea"
           ?disabled=${knobs.disabled}
           label=${knobs.label || nothing}
           placeholder=${knobs.placeholder || nothing}
-          supporting-text=${knobs.supportingText ||
-          nothing}></md-outlined-text-field>
+          supporting-text=${knobs.supportingText || nothing}
+        ></md-outlined-text-field>
       </div>
     `;
   },
 };
 
 const icons: MaterialStoryInit<StoryKnobs> = {
-  name: 'Icons',
+  name: "Icons",
   styles,
   render(knobs) {
     return html`
@@ -115,13 +115,15 @@ const icons: MaterialStoryInit<StoryKnobs> = {
           value="Value"
           prefix-text=${knobs.prefixText || nothing}
           suffix-text=${knobs.suffixText || nothing}
-          supporting-text=${knobs.supportingText || nothing}>
+          supporting-text=${knobs.supportingText || nothing}
+        >
           <md-icon slot="leading-icon">search</md-icon>
           <md-icon-button
             aria-label="Clear input"
             ?disabled=${knobs.disabled}
             slot="trailing-icon"
-            @click=${clearInput}>
+            @click=${clearInput}
+          >
             <md-icon>clear</md-icon>
           </md-icon-button>
         </md-filled-text-field>
@@ -133,13 +135,15 @@ const icons: MaterialStoryInit<StoryKnobs> = {
           value="Value"
           prefix-text=${knobs.prefixText || nothing}
           suffix-text=${knobs.suffixText || nothing}
-          supporting-text=${knobs.supportingText || nothing}>
+          supporting-text=${knobs.supportingText || nothing}
+        >
           <md-icon slot="leading-icon">search</md-icon>
           <md-icon-button
             aria-label="Clear input"
             ?disabled=${knobs.disabled}
             slot="trailing-icon"
-            @click=${clearInput}>
+            @click=${clearInput}
+          >
             <md-icon>clear</md-icon>
           </md-icon-button>
         </md-outlined-text-field>
@@ -149,7 +153,7 @@ const icons: MaterialStoryInit<StoryKnobs> = {
 };
 
 const validation: MaterialStoryInit<StoryKnobs> = {
-  name: 'Validation',
+  name: "Validation",
   styles,
   render(knobs) {
     return html`
@@ -160,7 +164,8 @@ const validation: MaterialStoryInit<StoryKnobs> = {
           value="Value"
           required
           supporting-text="* this field is required"
-          @change=${reportValidity}></md-outlined-text-field>
+          @change=${reportValidity}
+        ></md-outlined-text-field>
 
         <md-outlined-text-field
           ?disabled=${knobs.disabled}
@@ -169,7 +174,8 @@ const validation: MaterialStoryInit<StoryKnobs> = {
           min="1"
           max="10"
           supporting-text="Enter a number between 1 and 10"
-          @change=${reportValidity}></md-outlined-text-field>
+          @change=${reportValidity}
+        ></md-outlined-text-field>
 
         <md-outlined-text-field
           ?disabled=${knobs.disabled}
@@ -177,7 +183,8 @@ const validation: MaterialStoryInit<StoryKnobs> = {
           minlength="3"
           maxlength="10"
           supporting-text="3 to 10 characters"
-          @change=${reportValidity}></md-outlined-text-field>
+          @change=${reportValidity}
+        ></md-outlined-text-field>
 
         <md-outlined-text-field
           style="text-align: end"
@@ -187,14 +194,15 @@ const validation: MaterialStoryInit<StoryKnobs> = {
           placeholder="username"
           suffix-text="@gmail.com"
           supporting-text="Characters only"
-          @change=${reportValidity}></md-outlined-text-field>
+          @change=${reportValidity}
+        ></md-outlined-text-field>
       </div>
     `;
   },
 };
 
 const forms: MaterialStoryInit<StoryKnobs> = {
-  name: 'Forms',
+  name: "Forms",
   styles: [
     styles,
     css`
@@ -214,18 +222,20 @@ const forms: MaterialStoryInit<StoryKnobs> = {
             name="first-name"
             required
             no-asterisk
-            autocomplete="given-name"></md-filled-text-field>
+            autocomplete="given-name"
+          ></md-filled-text-field>
           <md-filled-text-field
             ?disabled=${knobs.disabled}
             label="Last name"
             name="last-name"
             required
             no-asterisk
-            autocomplete="family-name"></md-filled-text-field>
+            autocomplete="family-name"
+          ></md-filled-text-field>
         </div>
         <div class="row buttons">
-          <md-text-button type="reset">Reset</md-text-button>
-          <md-outlined-button type="submit">Submit</md-outlined-button>
+          <di-text-button type="reset">Reset</di-text-button>
+          <di-outlined-button type="submit">Submit</di-outlined-button>
         </div>
       </form>
     `;
@@ -241,15 +251,15 @@ function clearInput(event: Event) {
   const iconButton = event.target as HTMLElement;
   const textField = iconButton.parentElement as MdFilledTextField;
   iconButton.blur();
-  textField.value = '';
+  textField.value = "";
   textField.focus();
 }
 
 function alertValues(event: SubmitEvent) {
   event.preventDefault();
   const data = new FormData(event.target as HTMLFormElement);
-  const first = data.get('first-name') || '<empty>';
-  const last = data.get('last-name') || '<empty>';
+  const first = data.get("first-name") || "<empty>";
+  const last = data.get("last-name") || "<empty>";
   alert(`First name: ${first}, Last name: ${last}`);
 }
 

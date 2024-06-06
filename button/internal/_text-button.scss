@@ -4,11 +4,11 @@
 //
 
 // go/keep-sorted start
-@use 'sass:list';
-@use 'sass:map';
+@use "sass:list";
+@use "sass:map";
 // go/keep-sorted end
 // go/keep-sorted start
-@use '../../tokens';
+@use "../../tokens";
 // go/keep-sorted end
 
 @mixin theme($tokens) {
@@ -19,7 +19,7 @@
     }
 
     @if $value {
-      --md-text-button-#{$token}: #{$value};
+      --di-text-button-#{$token}: #{$value};
     }
   }
 }
@@ -31,7 +31,7 @@
 
   :host {
     // Only use the logical properties.
-    $tokens: map.remove($tokens, 'container-shape');
+    $tokens: map.remove($tokens, "container-shape");
     @each $token, $value in $tokens {
       --_#{$token}: #{$value};
     }

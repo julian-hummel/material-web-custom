@@ -1,4 +1,5 @@
 <!-- catalog-only-start --><!-- ---
+
 name: Introduction
 title: Introduction
 order: 1
@@ -47,11 +48,11 @@ this library are drop-in replacements for browser elements like `<button>` and `
 <form>
   <label>
     Email
-    <input type="email" name="email" required>
+    <input type="email" name="email" required />
   </label>
   <label>
     Subscribe
-    <input type="checkbox" name="subscribe">
+    <input type="checkbox" name="subscribe" />
   </label>
 
   <button type="reset">Reset</button>
@@ -60,15 +61,19 @@ this library are drop-in replacements for browser elements like `<button>` and `
 
 <!-- Material elements -->
 <form>
-  <md-outlined-text-field label="Email" type="email"
-      name="email" required></md-outlined-text-field>
+  <md-outlined-text-field
+    label="Email"
+    type="email"
+    name="email"
+    required
+  ></md-outlined-text-field>
   <label>
     Subscribe
     <md-checkbox name="subscribe"></md-checkbox>
   </label>
 
-  <md-text-button type="reset">Reset</md-text-button>
-  <md-outlined-button>Submit</md-outlined-button>
+  <di-text-button type="reset">Reset</di-text-button>
+  <di-outlined-button>Submit</di-outlined-button>
 </form>
 ```
 
@@ -83,7 +88,7 @@ that can be used to style components.
 :root {
   --md-sys-color-primary: olive;
   --md-sys-color-secondary: tomato;
-  --md-ref-typeface-brand: 'Open Sans';
+  --md-ref-typeface-brand: "Open Sans";
   --md-ref-typeface-plain: system-ui;
 }
 ```

@@ -19,11 +19,11 @@ open-source design system.
 
 ## Resources
 
--   [Introduction](./docs/intro.md)
--   [Roadmap](./docs/roadmap.md)
--   [Component docs](./docs/components/)
--   [Bundle size](./docs/size.md)
--   [Browser support and FAQ](./docs/support.md)
+- [Introduction](./docs/intro.md)
+- [Roadmap](./docs/roadmap.md)
+- [Component docs](./docs/components/)
+- [Bundle size](./docs/size.md)
+- [Browser support and FAQ](./docs/support.md)
 
 ## Quick start
 
@@ -39,7 +39,10 @@ for production.
 
 ```html
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
   <script type="importmap">
     {
       "imports": {
@@ -48,8 +51,8 @@ for production.
     }
   </script>
   <script type="module">
-    import '@material/web/all.js';
-    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+    import "@material/web/all.js";
+    import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
@@ -65,9 +68,12 @@ for production.
       <md-radio name="group"></md-radio>
     </div>
 
-    <md-outlined-text-field label="Favorite color" value="Purple"></md-outlined-text-field>
+    <md-outlined-text-field
+      label="Favorite color"
+      value="Purple"
+    ></md-outlined-text-field>
 
-    <md-outlined-button type="reset">Reset</md-outlined-button>
+    <di-outlined-button type="reset">Reset</di-outlined-button>
   </form>
   <style>
     form {

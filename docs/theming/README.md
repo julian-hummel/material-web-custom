@@ -1,4 +1,5 @@
 <!-- catalog-only-start --><!-- ---
+
 name: Material Theming
 title: Theming
 order: 1
@@ -43,8 +44,8 @@ and can be scoped with CSS selectors.
 
 ```css
 .square-buttons {
-  /* Changes all <md-filled-button> instances matching the selector */
-  --md-filled-button-container-shape: 0px;
+  /* Changes all <di-filled-button> instances matching the selector */
+  --di-filled-button-container-shape: 0px;
 }
 ```
 
@@ -60,14 +61,14 @@ families and weights across all system and component tokens.
 
 ```css
 :root {
-  --md-ref-typeface-brand: 'Open Sans';
-  --md-ref-typeface-plain: 'Open Sans';
+  --md-ref-typeface-brand: "Open Sans";
+  --md-ref-typeface-plain: "Open Sans";
 }
 ```
 
 #### Palette
 
-*MWC does not currently support `--md-ref-palette` tokens.*
+_MWC does not currently support `--md-ref-palette` tokens._
 
 ### System
 
@@ -114,7 +115,7 @@ components. See the [shape guide](shape.md) for more details.
 
 #### Motion
 
-*MWC does not currently support `--md-sys-motion` tokens.*
+_MWC does not currently support `--md-sys-motion` tokens._
 
 ### Component
 
@@ -123,16 +124,16 @@ tokens or concrete values.
 
 ```css
 :root {
-  --md-filled-button-container-shape: 0px;
+  --di-filled-button-container-shape: 0px;
 }
 
-md-filled-button.error {
-  --md-filled-button-container-color: var(--md-sys-color-error);
-  --md-filled-button-label-text-color: var(--md-sys-color-on-error);
+di-filled-button.error {
+  --di-filled-button-container-color: var(--md-sys-color-error);
+  --di-filled-button-label-text-color: var(--md-sys-color-on-error);
 }
 ```
 
 Refer to each [components' documentation](../components/) for available tokens.
 
 > Note: unlike `--md-ref-*` and `--md-sys-*` tokens, which are prefixed with
-> `ref` and `sys`, component tokens are *not* prefixed with `comp`.
+> `ref` and `sys`, component tokens are _not_ prefixed with `comp`.

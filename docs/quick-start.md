@@ -1,4 +1,5 @@
 <!-- catalog-only-start --><!-- ---
+
 name: Quick Start
 title: Quick Start
 order: 2
@@ -26,7 +27,10 @@ from NPM.
 
 ```html
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
   <script type="importmap">
     {
       "imports": {
@@ -35,8 +39,8 @@ from NPM.
     }
   </script>
   <script type="module">
-    import '@material/web/all.js';
-    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+    import "@material/web/all.js";
+    import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
 
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
@@ -51,8 +55,11 @@ from NPM.
       <md-radio name="group"></md-radio>
       <md-radio name="group"></md-radio>
     </div>
-    <md-outlined-text-field label="Favorite color" value="Purple"></md-outlined-text-field>
-    <md-outlined-button type="reset">Reset</md-outlined-button>
+    <md-outlined-text-field
+      label="Favorite color"
+      value="Purple"
+    ></md-outlined-text-field>
+    <di-outlined-button type="reset">Reset</di-outlined-button>
   </form>
   <style>
     form {
@@ -88,9 +95,9 @@ Import element definitions from
 
 ```js
 // index.js
-import '@material/web/button/filled-button.js';
-import '@material/web/button/outlined-button.js';
-import '@material/web/checkbox/checkbox.js';
+import "@material/web/button/filled-button.js";
+import "@material/web/button/outlined-button.js";
+import "@material/web/checkbox/checkbox.js";
 ```
 
 <!--#include file="../googlers/quick-start-import.md" -->
@@ -110,8 +117,8 @@ Use the `<component-name>` tag in HTML markup. Refer to the
   <md-checkbox checked></md-checkbox>
 </label>
 
-<md-outlined-button>Back</md-outlined-button>
-<md-filled-button>Next</md-filled-button>
+<di-outlined-button>Back</di-outlined-button>
+<di-filled-button>Next</di-filled-button>
 ```
 
 ## Building

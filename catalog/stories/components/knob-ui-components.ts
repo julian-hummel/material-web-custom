@@ -5,19 +5,19 @@
  */
 
 // These imports are resolved by Lit playground's unpkg loader
-import '@material/web/button/outlined-button.js';
-import '@material/web/checkbox/checkbox.js';
-import '@material/web/radio/radio.js';
-import '@material/web/ripple/ripple.js';
-import '@material/web/select/filled-select.js';
-import '@material/web/select/select-option.js';
-import '@material/web/textfield/filled-text-field.js';
+import "@material/web/button/outlined-button.js";
+import "@material/web/checkbox/checkbox.js";
+import "@material/web/radio/radio.js";
+import "@material/web/ripple/ripple.js";
+import "@material/web/select/filled-select.js";
+import "@material/web/select/select-option.js";
+import "@material/web/textfield/filled-text-field.js";
 
-import { css, html, LitElement } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { StyleInfo, styleMap } from 'lit/directives/style-map.js';
+import { css, html, LitElement } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { StyleInfo, styleMap } from "lit/directives/style-map.js";
 
-import { Knob, KnobUi } from '../knobs.js';
+import { Knob, KnobUi } from "../knobs.js";
 
 /**
  * A boolean Knob UI.
@@ -50,16 +50,16 @@ export function boolInput(): KnobUi<boolean> {
 /**
  * Color selector for knob UI
  */
-@customElement('knob-color-selector')
+@customElement("knob-color-selector")
 export class KnobColorSelector extends LitElement {
   static styles = css`
     :host {
       display: inline-block;
       position: relative;
       margin-inline-end: 16px;
-      --md-outlined-button-leading-space: 8px;
-      --md-outlined-button-trailing-space: 8px;
-      --md-outlined-button-container-height: 32px;
+      --di-outlined-button-leading-space: 8px;
+      --di-outlined-button-trailing-space: 8px;
+      --di-outlined-button-container-height: 32px;
       /* md-checkbox sizes */
       --_component-size: 40px;
       --_color-picker-size: 14px;
@@ -110,14 +110,14 @@ export class KnobColorSelector extends LitElement {
     }
   `;
 
-  private internalValue = '';
+  private internalValue = "";
 
   @property({ type: Boolean }) hasAlpha = false;
 
   set value(val: string) {
     const oldVal = this.internalValue;
     this.internalValue = val;
-    this.requestUpdate('value', oldVal);
+    this.requestUpdate("value", oldVal);
   }
 
   @property({ type: String, reflect: true })
@@ -130,13 +130,13 @@ export class KnobColorSelector extends LitElement {
       <span>
         ${this.hasAlpha ? this.renderTextInput() : this.renderColorInput()}
       </span>
-      <md-outlined-button
+      <di-outlined-button
         @click=${() => {
           this.hasAlpha = !this.hasAlpha;
         }}
       >
-        ${this.hasAlpha ? 'rgba' : 'rgb'}
-      </md-outlined-button>
+        ${this.hasAlpha ? "rgba" : "rgb"}
+      </di-outlined-button>
     </span>`;
   }
 
@@ -151,7 +151,7 @@ export class KnobColorSelector extends LitElement {
 
   private renderColorInput() {
     const rippleStyles = styleMap({
-      '--md-sys-color-on-surface': this.value || 'black',
+      "--md-sys-color-on-surface": this.value || "black",
     });
 
     return html`
@@ -182,7 +182,7 @@ export class KnobColorSelector extends LitElement {
 
   click() {
     const input = this.renderRoot!.querySelector(
-      'input,md-filled-text-field'
+      "input,md-filled-text-field"
     ) as HTMLElement;
     input.click();
     input.focus();
@@ -190,7 +190,7 @@ export class KnobColorSelector extends LitElement {
 
   focus() {
     const input = this.renderRoot!.querySelector(
-      'input,md-filled-text-field'
+      "input,md-filled-text-field"
     ) as HTMLElement;
     input.focus();
   }
@@ -198,7 +198,7 @@ export class KnobColorSelector extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'knob-color-selector': KnobColorSelector;
+    "knob-color-selector": KnobColorSelector;
   }
 }
 
@@ -228,7 +228,7 @@ export function colorPicker(opts?: ColorPickerOpts): KnobUi<string> {
         <div>
           <label>
             <knob-color-selector
-              .value="${knob.latestValue ?? ''}"
+              .value="${knob.latestValue ?? ""}"
               .hasAlpha="${config.hasAlpha}"
               @input=${valueChanged}
             ></knob-color-selector>
@@ -245,13 +245,13 @@ interface TextInputOptions<T> {
 }
 
 const sharedTextFieldStyles: StyleInfo = {
-  'margin-inline-end': '16px',
-  '--md-filled-field-leading-space': '8px',
-  '--md-filled-field-trailing-space': '8px',
-  '--md-filled-field-top-space': '4px',
-  '--md-filled-field-bottom-space': '4px',
-  width: '150px',
-  'min-width': '150px',
+  "margin-inline-end": "16px",
+  "--md-filled-field-leading-space": "8px",
+  "--md-filled-field-trailing-space": "8px",
+  "--md-filled-field-top-space": "4px",
+  "--md-filled-field-bottom-space": "4px",
+  width: "150px",
+  "min-width": "150px",
 };
 
 /**
@@ -276,7 +276,7 @@ export function textInput<T>(options?: TextInputOptions<T>): KnobUi<T> {
           <label>
             <md-filled-text-field
               style=${styleMap(sharedTextFieldStyles)}
-              .value="${(knob.latestValue ?? '') as unknown as string}"
+              .value="${(knob.latestValue ?? "") as unknown as string}"
               @input="${valueChanged}"
             ></md-filled-text-field>
             ${knob.name}
@@ -318,7 +318,7 @@ export function numberInput(opts?: NumberInputOpts): KnobUi<number> {
               style=${styleMap(sharedTextFieldStyles)}
               type="number"
               step="${config.step}"
-              .value="${knob.latestValue ? knob.latestValue.toString() : '0'}"
+              .value="${knob.latestValue ? knob.latestValue.toString() : "0"}"
               @input="${valueChanged}"
             ></md-filled-text-field>
             ${knob.name}
@@ -340,11 +340,11 @@ export function button(): KnobUi<number> {
         const count = knob.latestValue ?? 0;
         onChange(count + 1);
       };
-      const styles = styleMap({ display: 'inline-block' });
+      const styles = styleMap({ display: "inline-block" });
       return html`
-        <md-outlined-button outlined @click=${onClick} style=${styles}>
+        <di-outlined-button outlined @click=${onClick} style=${styles}>
           ${knob.name}
-        </md-outlined-button>
+        </di-outlined-button>
       `;
     },
   };
